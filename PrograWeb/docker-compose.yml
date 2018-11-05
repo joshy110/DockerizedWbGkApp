@@ -1,0 +1,52 @@
+server:
+  image: node:lastest
+  command: npm run backend
+  working_dir: /app
+  volumes:
+    - ./server:/app
+  environment:
+    PORT: 3000
+  ports:
+    - "3000:3000"
+  links:
+    - mongodb
+
+frontend:
+  image: node:lastest
+  command: npm run webpack
+  working_dir: /app
+  volumes:
+    - ./frontend:/app
+  ports:
+    - "3002:3002"
+
+mongodb:
+  image: mongo
+  ports:
+      - "27017:27017"
+
+
+
+
+version: "2"
+services:
+  angular:
+    build: ./mana-app2
+    container_name: "front-end"
+    ports:
+      - 3000:3000
+  web:
+    links:
+      - "db:database"
+    container_name: "back-end"
+    build: ./mongo-mana-app-server
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3002:3002"
+  db:
+    image: mongo
+    container_name: "mongodb"
+    ports:
+      - "27017:27017"
