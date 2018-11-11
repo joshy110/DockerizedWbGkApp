@@ -1,7 +1,7 @@
 version: "1"
 services:
   frontend:
-    build: ./FrontEnd/WebkGk
+    build: ./FrontEnd/WebkGk/webgk2
     container_name: "front-end"
     ports:
       - 3000:3000
@@ -9,12 +9,14 @@ services:
     links:
       - "db:database"
     container_name: "back-end"
-    build: ./BackEnd/Lab6BKEnd
+    build: ./BackEnd/Lab6BKEnd/Lab6
     volumes:
       - .:/usr/app/
       - /usr/app/node_modules
     ports:
       - "3002:3002"
+    depends_on:
+      - mongo
   db:
     image: mongo
     container_name: "mongodb"
