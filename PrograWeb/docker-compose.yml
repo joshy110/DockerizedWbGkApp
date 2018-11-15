@@ -1,10 +1,10 @@
-version: "3.0"
+version: "2"
 services:
   frontend:
     build: ./FrontEnd/WebkGk/webgk2
     container_name: "front-end"
     ports:
-      - "3000:3000"
+      - "3000:80"
   server:
     links:
       - "db:database"
@@ -16,7 +16,7 @@ services:
     ports:
       - "3002:3002"
     depends_on:
-      - mongo
+      - db
   db:
     image: mongo
     container_name: "mongodb"

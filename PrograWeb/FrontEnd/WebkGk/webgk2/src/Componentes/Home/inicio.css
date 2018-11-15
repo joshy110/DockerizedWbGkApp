@@ -1,0 +1,38 @@
+.imagenP {
+    position: left;
+    width: 630px;
+    height: 430px;
+}
+
+.textoPImagenP {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    width: 100%;
+    background-color: #1177B7;
+}
+
+.labelP {
+    background-color: #1177B7;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:  white;
+    font-style: oblique;
+    font-size: 18px;
+    border-bottom-left-radius: 2em;
+    border-top-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+    border: 1px solid white;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+.TextoInicio{
+    background-color: #000203;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #fff;
+    text-align: justify;
+    font-size: 6;
+    padding-left: 10px;
+    padding-right: 10px;
+}
