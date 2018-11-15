@@ -16,7 +16,7 @@ services:
     ports:
       - "3002:3002"
     depends_on:
-      - mongo
+      - db
   db:
     image: mongo
     container_name: "mongodb"
